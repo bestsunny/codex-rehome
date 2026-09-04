@@ -692,12 +692,6 @@ fn stage_projects(
                 .path()
                 .strip_prefix(&canonical)
                 .map_err(|_| package_invalid("selected project entry escapes the project root"))?;
-            if is_forbidden(relative) {
-                let length = entry.metadata().map(|metadata| metadata.len()).unwrap_or(0);
-                excluded_files += 1;
-                excluded_bytes += length;
-                continue;
-            }
             let relative = normalize_entry(relative)?;
             let archive_path = format!("{archive_root}/{relative}");
             stage_source(entry.path(), staging_root, payloads, &archive_path)?;
@@ -1957,7 +1951,32 @@ fn package_entry_is_forbidden(entry: &str) -> bool {
     if let Some(relative) = entry.strip_prefix(&format!("{PLUGIN_CACHE_ROOT}/")) {
         return is_forbidden(Path::new(relative));
     }
+    // Selected project payloads intentionally preserve every regular file;
+    // the staging walker has already rejected symlinks and never follows them.
+    // Keep the exception scoped to a validated project UUID/files subtree so
+    // similarly named paths elsewhere in the archive remain protected.
+    if is_project_file_entry(entry) {
+        return false;
+    }
     is_forbidden(Path::new(entry))
+}
+
+/// Returns whether an archive entry belongs to a selected project's file payload.
+///
+/// The manifest validator separately authenticates the project UUID and archive
+/// root. This helper only classifies the path for forbidden-file accounting.
+fn is_project_file_entry(entry: &str) -> bool {
+    let mut parts = entry.split('/');
+    if parts.next() != Some("projects") {
+        return false;
+    }
+    let Some(project_id) = parts.next() else {
+        return false;
+    };
+    if Uuid::parse_str(project_id).is_err() || parts.next() != Some("files") {
+        return false;
+    }
+    parts.next().is_some()
 }
 
 fn validate_output_path(path: &Path, replace_existing: bool) -> Result<(), RehomeError> {

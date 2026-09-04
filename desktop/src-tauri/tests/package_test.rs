@@ -85,7 +85,7 @@ fn packages_selected_fixture_content_without_mutating_sources() -> Result<(), Bo
 
     assert_eq!(report.package_path, output);
     assert_eq!(report.counts.projects, 1);
-    assert_eq!(report.counts.project_files, 1);
+    assert_eq!(report.counts.project_files, 4);
     assert_eq!(report.counts.conversations, 1);
     assert_eq!(report.counts.skills, 1);
     assert_eq!(report.counts.plugins, 1);
@@ -108,8 +108,15 @@ fn packages_selected_fixture_content_without_mutating_sources() -> Result<(), Bo
     assert_eq!(preview.forbidden_files_total, 0);
     assert!(preview.checksum_valid);
     assert!(preview.entries.iter().all(|entry| !entry.contains('\\')));
-    assert!(!preview.entries.iter().any(|entry| entry.contains("/.git/")));
-    assert!(!preview.entries.iter().any(|entry| entry.ends_with("/.env")));
+    assert!(preview.entries.iter().any(|entry| entry.ends_with("/.env")));
+    assert!(preview
+        .entries
+        .iter()
+        .any(|entry| entry.ends_with("/.git/config")));
+    assert!(preview
+        .entries
+        .iter()
+        .any(|entry| entry.ends_with("/node_modules/file.js")));
     assert!(!preview
         .entries
         .iter()
@@ -1097,8 +1104,8 @@ fn symbolic_links_in_selected_projects_are_safely_excluded() -> Result<(), Box<d
 
     let preview = inspect_package(&package)?;
     assert_eq!(preview.manifest.counts.projects, 1);
-    assert_eq!(preview.manifest.counts.project_files, 1);
-    assert_eq!(preview.manifest.exclusions.excluded_files, 4);
+    assert_eq!(preview.manifest.counts.project_files, 4);
+    assert_eq!(preview.manifest.exclusions.excluded_files, 1);
     assert!(!preview
         .entries
         .iter()

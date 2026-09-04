@@ -596,8 +596,7 @@ fn opaque_plan_id_applies_the_server_held_plan() -> Result<(), Box<dyn Error>> {
 #[test]
 fn forbidden_package_is_rejected_before_journal_or_backup_creation() -> Result<(), Box<dyn Error>> {
     let harness = RestoreHarness::new_with_setup(DatabaseSchema::Compatible, |package_path, _| {
-        let preview = inspect_package(package_path)?;
-        let name = format!("{}/.env", preview.manifest.projects[0].archive_path);
+        let name = "codex/skills/.env";
         add_forbidden_payload(package_path, &name, b"SECRET=1\n")
     })?;
     assert!(inspect_package(&harness.plan.package_path)?.forbidden_files_total > 0);
