@@ -41,7 +41,7 @@ ReHome Desktop is currently in beta. See [validation status](docs/validation-sta
 
 ReHome Desktop keeps migration offline. It requires no additional account, uploads no migration data, installs no system service, adds no autostart entry, and requests no administrator access. At launch it contacts GitHub Releases to check for a newer version. A failed check never blocks migration, and downloading or installing an update requires user confirmation.
 
-Packages exclude login tokens, cookies, `.env` files, private keys, `.git`, `node_modules`, virtual environments, and runtime lock files by default. Never upload a personal `.rehome` file to GitHub, a public post, or a public download link.
+Packages preserve every regular file in a selected project directory, including `.env` files, `.git`, dependency directories, and build artifacts. Project symlinks are skipped and their targets are never followed. Content outside selected project directories still excludes login tokens, cookies, private keys, and runtime data by default. Never upload a personal `.rehome` file to GitHub, a public post, or a public download link.
 
 ## Important limits
 
