@@ -1,6 +1,6 @@
 # Codex ReHome
 
-[中文](README.md) | [English](README.en.md) | [Download ReHome Desktop](https://github.com/CalebYcj/codex-rehome/releases)
+[中文](README.md) | [English](README.en.md) | [Download ReHome Desktop](https://github.com/bestsunny/codex-rehome/releases)
 
 Move selected Codex Desktop projects, conversations, Skills, Plugins, and generated artifacts between computers through a local, offline migration package.
 
@@ -8,7 +8,7 @@ Move selected Codex Desktop projects, conversations, Skills, Plugins, and genera
 >
 > The original workflow asked Codex to run the migration through an Agent Skill. That workflow is now available as **ReHome Desktop** for everyday use. The original Skill remains available for automation and troubleshooting.
 
-[Download ReHome Desktop](https://github.com/CalebYcj/codex-rehome/releases) · [Open Codex ReHome Skill](https://github.com/CalebYcj/codex-rehome-skill)
+[Download ReHome Desktop](https://github.com/bestsunny/codex-rehome/releases) · [Open Codex ReHome Skill](https://github.com/CalebYcj/codex-rehome-skill)
 
 ## Move in three steps
 

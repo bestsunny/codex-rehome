@@ -6,7 +6,7 @@ ReHome Desktop is the offline desktop edition of Codex Rehome. ReHome Core and C
 
 ## Download
 
-Download the matching file from [GitHub Releases](https://github.com/CalebYcj/codex-rehome/releases):
+Download the matching file from [GitHub Releases](https://github.com/bestsunny/codex-rehome/releases):
 
 - Windows: `ReHome-Desktop_*_x64-setup.exe`
 - macOS: `ReHome-Desktop_*_universal.dmg`, for both Intel and Apple Silicon

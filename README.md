@@ -1,6 +1,6 @@
 # Codex ReHome
 
-[中文](README.md) | [English](README.en.md) | [下载 ReHome Desktop](https://github.com/CalebYcj/codex-rehome/releases)
+[中文](README.md) | [English](README.en.md) | [下载 ReHome Desktop](https://github.com/bestsunny/codex-rehome/releases)
 
 把 Codex Desktop 里你选择的项目、对话、Skills、Plugins 和生成内容，从一台电脑离线搬到另一台电脑。
 
@@ -8,7 +8,7 @@
 >
 > 之前需要把 Skill 发给 Codex，让 Agent 帮你执行迁移。现在这套流程已经做成 **ReHome Desktop**：普通用户直接使用 App 即可。旧 Skill 仍然保留，适合自动化和故障处理。
 
-[下载 ReHome Desktop](https://github.com/CalebYcj/codex-rehome/releases) · [前往 Codex ReHome Skill](https://github.com/CalebYcj/codex-rehome-skill)
+[下载 ReHome Desktop](https://github.com/bestsunny/codex-rehome/releases) · [前往 Codex ReHome Skill](https://github.com/CalebYcj/codex-rehome-skill)
 
 ## 三步完成迁移
 

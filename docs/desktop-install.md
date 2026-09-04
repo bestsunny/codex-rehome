@@ -6,7 +6,7 @@ ReHome Desktop 是 Codex Rehome 的离线桌面版。它把 ReHome Core 和 Code
 
 ## 下载
 
-从 [GitHub Releases](https://github.com/CalebYcj/codex-rehome/releases) 下载与你的电脑对应的文件：
+从 [GitHub Releases](https://github.com/bestsunny/codex-rehome/releases) 下载与你的电脑对应的文件：
 
 - Windows：`ReHome-Desktop_*_x64-setup.exe`
 - macOS：`ReHome-Desktop_*_universal.dmg`，同时支持 Intel 和 Apple Silicon

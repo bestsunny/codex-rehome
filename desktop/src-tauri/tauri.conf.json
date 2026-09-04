@@ -49,7 +49,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhFNDhDRTQ2REYzMzY2QjgKUldTNFpqUGZSczVJam1rYjJqanF5NFZnY0ZWWVE3OXoxZ1B6Tnl4a3pWelpVNGFGUVRsdTJ1Y0oK",
       "endpoints": [
-        "https://github.com/CalebYcj/codex-rehome/releases/latest/download/latest.json"
+        "https://github.com/bestsunny/codex-rehome/releases/latest/download/latest.json"
       ],
       "windows": {
         "installMode": "passive"
